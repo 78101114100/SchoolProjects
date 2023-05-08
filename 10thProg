@@ -1,0 +1,30 @@
+import java.util.Scanner;
+class Employee
+{
+    public double DA(double p)
+    {return (30.0/100.0)*p;}
+    public double HR(double H)
+    {return (15.0/100.0)*H;}
+    public double PR(double L)
+    {return (12.5/100.0)*L;}
+}
+class Actual
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter basic pay");
+        double p=sc.nextDouble();
+        Employee E1=new Employee();
+        double DearnessAllowance=E1.DA(p);//Dearness Allowance
+        double HouseRentAllowance=E1.HR(p);//House Rent Allowance
+        double ProvidentFund=E1.PR(p);
+        double grossPay=p+DearnessAllowance+HouseRentAllowance;
+        double Netpay=grossPay-ProvidentFund;
+        System.out.println("DearNess Allowance is "+DearnessAllowance);
+        System.out.println("HouseRent Allowance is"+HouseRentAllowance);
+        System.out.println("Provident fund is"+ProvidentFund);
+        System.out.println("Gross Pay is"+grossPay);
+        System.out.println("Netpay is"+Netpay);
+    }
+}
